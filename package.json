@@ -1,0 +1,53 @@
+{
+  "name": "@list-kr/microshield-stack-parser",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "pkgroll --src sources",
+    "exec": "tsx sources/index.ts",
+    "lint": "tsc --noEmit && eslint . --ext .ts",
+    "test": "NODE_OPTIONS='--import=tsx --no-warnings' ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/List-KR/microShield-stack-parser"
+  },
+  "exports": {
+    "require": {
+      "types": "./dist/index.d.cts",
+      "default": "./dist/index.cjs"
+    },
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "ava": {
+    "files": [
+      "tests/**/*.test.ts"
+    ],
+    "extensions": {
+      "ts": "module"
+    },
+    "workerThreads": false
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "error-stack-parser": "^2.1.4",
+    "es-toolkit": "^1.20.0",
+    "pkgroll": "^2.5.0",
+    "ts-morph": "^23.0.0",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.5.5",
+    "eslint": "^9.10.0",
+    "tsx": "^4.19.1",
+    "typescript-eslint": "^8.6.0"
+  }
+}
