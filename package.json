@@ -1,5 +1,5 @@
 {
-  "name": "@list-kr/microshield-stack-parser",
+  "name": "@list-kr/microshield-stack-trace",
   "type": "module",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/List-KR/microShield-stack-parser"
+    "url": "https://github.com/List-KR/microShield-stack-trace"
   },
   "exports": {
     "require": {
