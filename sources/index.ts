@@ -1,4 +1,5 @@
 import * as TsMorph from 'ts-morph'
+import * as ErrorStackParser from 'error-stack-parser'
 
 export class StackTracer {
   private Code: string
@@ -25,5 +26,9 @@ export class StackTracer {
     })
     const Target = TryStatements[0].getFirstAncestorByKind(TsMorph.SyntaxKind.FunctionDeclaration)
     return Target.getFirstChildByKind(TsMorph.SyntaxKind.Identifier).getText()
+  }
+
+  MatchCondition(ErrorInstance: Error): boolean {
+    return ErrorStackParser.parse(ErrorInstance).some(StackFrame => StackFrame.functionName === this.Analyze())
   }
 }
